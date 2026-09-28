@@ -9,13 +9,15 @@ import edu.ucb.project.login.domain.usecase.LoginUseCase
 import edu.ucb.project.login.domain.repository.LoginRepository
 import edu.ucb.project.navigation.AppNavHost
 import edu.ucb.project.user_search.presentation.screen.UserSearchScreen
+import edu.ucb.project.weather.presentation.screen.WeatherScreen
+
 
 @Composable
 @Preview
 fun App(){
     MaterialTheme{
 //    AppNavHost()
-    UserSearchScreen()
+    WeatherScreen()
     }
 }
 
