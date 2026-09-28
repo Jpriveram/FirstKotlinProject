@@ -1,0 +1,59 @@
+package edu.ucb.project.signin.presentation.composable
+
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.FlowColumn
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+//@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun FlowColumnEjemplo() {
+    val listDesserts = listOf(
+        "Apple", "Banana", "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb",
+        "Ice Cream Sandwich", "Jellybean", "KitKat", "Lollipop", "Marshmallow", "Nougat"
+    )
+
+    FlowColumn(
+        modifier = Modifier
+            .padding(20.dp)
+            .fillMaxHeight()
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        maxItemsInEachColumn = 7
+    ) {
+        repeat(listDesserts.size) {
+            Box(
+                modifier = Modifier
+                    .border(1.dp, Color.DarkGray, RoundedCornerShape(8.dp))
+                    .padding(8.dp)
+            ) {
+                Text(
+                    text = listDesserts[it],
+                    fontSize = 12.sp,
+                    modifier = Modifier.padding(3.dp)
+                )
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun FlowColumnPagePreview() {
+    MaterialTheme{
+        FlowColumnEjemplo()
+    }
+}
