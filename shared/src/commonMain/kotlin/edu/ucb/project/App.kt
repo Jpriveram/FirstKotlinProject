@@ -12,6 +12,7 @@ import edu.ucb.project.user_search.presentation.screen.UserSearchScreen
 import edu.ucb.project.weather.presentation.screen.WeatherScreen
 
 
+
 @Composable
 @Preview
 fun App(){
@@ -20,4 +21,6 @@ fun App(){
     WeatherScreen()
     }
 }
+
+
 

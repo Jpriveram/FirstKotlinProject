@@ -9,8 +9,6 @@ import edu.ucb.project.weather.data.datasource.WeatherRemoteDataSource
 import edu.ucb.project.weather.data.service.WeatherApiService
 import edu.ucb.project.weather.domain.repository.WeatherRepository
 import edu.ucb.project.weather.data.repository.WeatherRepositoryImpl
-import edu.ucb.project.weather.domain.usecase.GetWeatherUseCase
-import edu.ucb.project.weather.presentation.viewmodel.WeatherViewModel
 
 
 val dataModule = module {
@@ -18,5 +16,4 @@ val dataModule = module {
     single<GithubRepository>{ GithubRepositoryImpl(get()) }
     single<WeatherRemoteDataSource>{ WeatherApiService() }
     single<WeatherRepository>{ WeatherRepositoryImpl(get())}
-    single { GetWeatherUseCase(get()) }
 }
