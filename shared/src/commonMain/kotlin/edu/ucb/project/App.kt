@@ -15,13 +15,38 @@ import edu.ucb.project.weather.presentation.screen.WeatherScreen
 
 
 @Composable
-@Preview
 fun App(){
     MaterialTheme{
 //    AppNavHost()
         ExchangeRateScreen()
     }
 }
+
+@Preview
+@Composable
+fun AppPreview(){
+    org.koin.compose.KoinApplication(application = {
+        modules(
+            edu.ucb.project.di.presentationModule,
+            edu.ucb.project.di.domainModule,
+            edu.ucb.project.di.dataModule,
+            org.koin.dsl.module {
+                // Mocking the database DAO so it doesn't crash the preview
+                single<edu.ucb.project.exchangerate.data.dao.ExchangeRateDao> {
+                    object : edu.ucb.project.exchangerate.data.dao.ExchangeRateDao {
+                        override suspend fun insert(dollar: edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity) {}
+                        override suspend fun getList(): List<edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity> = emptyList()
+                        override suspend fun deleteAll() {}
+                        override suspend fun insertDollars(lists: List<edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity>) {}
+                    }
+                }
+            }
+        )
+    }) {
+        App()
+    }
+}
+
 
 
 

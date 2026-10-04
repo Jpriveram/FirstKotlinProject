@@ -1,5 +1,7 @@
 package edu.ucb.project
 
+import edu.ucb.project.di.getPlatform
+
 class Greeting {
     private val platform = getPlatform()
 

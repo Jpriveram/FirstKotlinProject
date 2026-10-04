@@ -1,4 +1,4 @@
-package edu.ucb.project
+package edu.ucb.project.di
 
 import platform.UIKit.UIDevice
 
