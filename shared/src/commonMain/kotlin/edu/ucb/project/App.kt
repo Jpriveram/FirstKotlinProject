@@ -17,8 +17,7 @@ import edu.ucb.project.weather.presentation.screen.WeatherScreen
 @Composable
 fun App(){
     MaterialTheme{
-//    AppNavHost()
-        ExchangeRateScreen()
+        AppNavHost()
     }
 }
 
@@ -35,7 +34,7 @@ fun AppPreview(){
                 single<edu.ucb.project.exchangerate.data.dao.ExchangeRateDao> {
                     object : edu.ucb.project.exchangerate.data.dao.ExchangeRateDao {
                         override suspend fun insert(dollar: edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity) {}
-                        override suspend fun getList(): List<edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity> = emptyList()
+                        override fun getList(): kotlinx.coroutines.flow.Flow<List<edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity>> = kotlinx.coroutines.flow.flowOf(emptyList())
                         override suspend fun deleteAll() {}
                         override suspend fun insertDollars(lists: List<edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity>) {}
                     }

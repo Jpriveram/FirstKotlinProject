@@ -5,10 +5,12 @@ import edu.ucb.project.exchangerate.domain.model.ExchangeRateModel
 import edu.ucb.project.exchangerate.domain.repository.ExchangeRateRepository
 
 
+import kotlinx.coroutines.flow.Flow
+
 class ExchangeRateRepositoryImpl(
     val localDataSource: ExchangeRateLocalDataSource
 ): ExchangeRateRepository {
-    override suspend fun getList(): List<ExchangeRateModel> {
+    override fun getList(): Flow<List<ExchangeRateModel>> {
         return localDataSource.getList()
     }
 

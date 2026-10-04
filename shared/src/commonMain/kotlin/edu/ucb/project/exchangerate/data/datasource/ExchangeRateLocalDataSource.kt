@@ -4,12 +4,15 @@ import edu.ucb.project.exchangerate.data.dao.ExchangeRateDao
 import edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity
 import edu.ucb.project.exchangerate.domain.model.ExchangeRateModel
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
 class ExchangeRateLocalDataSource(
     val dao: ExchangeRateDao
 ) {
-    suspend fun getList(): List<ExchangeRateModel> {
-        return dao.getList().map {
-            it.toModel()
+    fun getList(): Flow<List<ExchangeRateModel>> {
+        return dao.getList().map { list ->
+            list.map { it.toModel() }
         }
     }
 
@@ -25,7 +28,7 @@ class ExchangeRateLocalDataSource(
     }
 
     private fun ExchangeRateModel.toEntity() = ExchangeRateEntity(
-        dollarOfficial = "12.05",
-        dollarParallel = "12.07"
+        dollarOfficial = official,
+        dollarParallel = parallel
     )
 }
