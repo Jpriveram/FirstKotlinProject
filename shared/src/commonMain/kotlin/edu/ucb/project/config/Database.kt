@@ -7,7 +7,6 @@ import androidx.room3.RoomDatabaseConstructor
 import edu.ucb.project.exchangerate.data.dao.ExchangeRateDao
 import edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity
 
-
 @Database(entities = [ExchangeRateEntity::class], version = 1)
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {

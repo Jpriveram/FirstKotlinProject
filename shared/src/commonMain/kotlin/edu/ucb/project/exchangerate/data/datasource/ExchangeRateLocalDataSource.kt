@@ -2,6 +2,7 @@ package edu.ucb.project.exchangerate.data.datasource
 
 import edu.ucb.project.exchangerate.data.dao.ExchangeRateDao
 import edu.ucb.project.exchangerate.data.entity.ExchangeRateEntity
+import edu.ucb.project.exchangerate.domain.model.ExchangeRateModel
 
 class ExchangeRateLocalDataSource(
     val dao: ExchangeRateDao

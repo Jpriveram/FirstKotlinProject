@@ -5,7 +5,7 @@ import edu.ucb.project.exchangerate.domain.model.ExchangeRateModel
 import edu.ucb.project.exchangerate.domain.repository.ExchangeRateRepository
 
 
-class DollarRepositoryImpl(
+class ExchangeRateRepositoryImpl(
     val localDataSource: ExchangeRateLocalDataSource
 ): ExchangeRateRepository {
     override suspend fun getList(): List<ExchangeRateModel> {

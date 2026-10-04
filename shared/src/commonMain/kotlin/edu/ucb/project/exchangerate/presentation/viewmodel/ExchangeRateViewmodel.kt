@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class DollarViewModel(
+class ExchangeRateViewModel(
     val repository: ExchangeRateRepository
 ): ViewModel() {
 
