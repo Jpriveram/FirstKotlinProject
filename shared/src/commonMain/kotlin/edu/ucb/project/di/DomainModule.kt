@@ -1,5 +1,6 @@
 package edu.ucb.project.di
 
+import edu.ucb.project.exchangerate.domain.usecase.ObserveExchangeUseCase
 import edu.ucb.project.login.domain.usecase.LoginUseCase
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
@@ -10,4 +11,6 @@ val domainModule = module {
     singleOf(::LoginUseCase)
     singleOf(::SearchUserUseCase)
     singleOf(::GetWeatherUseCase)
+    singleOf(::ObserveExchangeUseCase)
+
 }

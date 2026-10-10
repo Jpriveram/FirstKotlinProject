@@ -5,8 +5,11 @@ import org.koin.dsl.module
 import edu.ucb.project.config.AppDatabase
 import edu.ucb.project.exchangerate.data.dao.ExchangeRateDao
 import edu.ucb.project.exchangerate.data.datasource.ExchangeRateLocalDataSource
+import edu.ucb.project.exchangerate.data.datasource.RealTimeDataBase
 import edu.ucb.project.exchangerate.data.repository.ExchangeRateRepositoryImpl
+import edu.ucb.project.exchangerate.data.repository.ExchangeRepositoryImpl
 import edu.ucb.project.exchangerate.domain.repository.ExchangeRateRepository
+import edu.ucb.project.exchangerate.domain.repository.ExchangeRepository
 import edu.ucb.project.user_search.data.datasource.GithubRemoteDataSource
 import edu.ucb.project.user_search.domain.repository.GithubRepository
 import edu.ucb.project.user_search.data.repository.GithubRepositoryImpl
@@ -29,4 +32,8 @@ val dataModule = module {
     }
     singleOf(::ExchangeRateLocalDataSource)
     single<ExchangeRateRepository> { ExchangeRateRepositoryImpl(get()) }
+
+    singleOf(::RealTimeDataBase)
+    single<ExchangeRepository> { ExchangeRepositoryImpl(get()) }
 }
+
