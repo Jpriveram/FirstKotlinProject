@@ -65,8 +65,8 @@ androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.r
 androidx-room3-runtime = { module = "androidx.room3:room3-runtime", version.ref = "room3" }
 androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3" }
 androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
-
-
+firebase-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "firebaseDatabase" }
+firebase-config = { module = "dev.gitlive:firebase-config", version.ref = "firebaseDatabase" }
 
 
 
