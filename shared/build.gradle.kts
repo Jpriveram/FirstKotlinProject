@@ -80,6 +80,8 @@ kotlin {
             implementation(libs.firebase.database)
             implementation(libs.firebase.firestore)
             implementation(libs.firebase.config)
+            implementation("edu.ucb.ds:shared:1.0.0-SNAPSHOT")
+
 
 
 
