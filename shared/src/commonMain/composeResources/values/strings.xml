@@ -1,5 +1,16 @@
-<resources>
-    <string name="app_name">KotlinFirstProject</string>
-    <string name="signin_button">Sign In</string>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Loco xml export: Android strings
+ Project: kotlinfirstproject
+ Locale: en-US, English (USA)
+ Exported by: JUAN PABLO RIVERA MERCADO
+ Exported at: Fri, 16 Oct 2026 15:14:55 -0400
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="welcome_message">Welcome</string>
+    <string name="login_title">Are you sure you want to log out of Barik Mobile?</string>
+    <string name="app_name">ucbp2</string>
+    <string name="field_empty_text">this field cant be empty</string>
     <string name="signin_title">Sign In</string>
+    <string name="signin_button">Sign In</string>
 </resources>

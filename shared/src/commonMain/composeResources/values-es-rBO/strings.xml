@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Loco xml export: Android strings
+ Project: kotlinfirstproject
+ Locale: es-BO, Spanish (Bolivia)
+ Exported by: JUAN PABLO RIVERA MERCADO
+ Exported at: Fri, 16 Oct 2026 15:14:55 -0400
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="welcome_message">Bienvenido</string>
+    <string name="login_title">Seguro que quieres salir?</string>
+    <string name="app_name">ucbp2</string>
+    <string name="field_empty_text">el campo no puede estar vacio</string>
+    <string name="signin_title">Iniciar sesión</string>
+    <string name="signin_button">Iniciar sesión</string>
+</resources>

@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room3)
+    alias(libs.plugins.wire)
 
 
 
@@ -58,7 +59,9 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation( libs.ktor.client.okhttp)
             implementation(libs.androidx.room3.sqlite.wrapper)
-
+            implementation(libs.androidx.work.runtime.ktx)
+            implementation(project.dependencies.platform(libs.firebase.bom))
+            implementation(libs.firebase.messaging)
 
         }
 
@@ -84,6 +87,8 @@ kotlin {
             implementation(libs.firebase.firestore)
             implementation(libs.firebase.config)
             implementation("edu.ucb.ds:shared:1.0.0-SNAPSHOT")
+            implementation(libs.wire.runtime)
+            implementation(libs.wire.grpc.client)
 
 
 
@@ -103,6 +108,16 @@ dependencies {
 
 room3{
     schemaDirectory("$projectDir/schemas")
+}
+
+wire {
+    sourcePath {
+        srcDir("src/commonMain/proto")
+    }
+    kotlin {
+        rpcRole = "client"
+        rpcCallStyle = "suspending"
+    }
 }
 
 val locoApiKey = providers.gradleProperty("LOCO_API_KEY").orElse("TU_API_KEY_AQUI")
