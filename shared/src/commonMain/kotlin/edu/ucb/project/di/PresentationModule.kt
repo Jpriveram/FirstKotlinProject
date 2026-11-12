@@ -8,6 +8,7 @@ import edu.ucb.project.user_search.presentation.viewmodel.UserSearchViewModel
 import edu.ucb.project.weather.presentation.viewmodel.WeatherViewModel
 import edu.ucb.project.exchangerate.presentation.viewmodel.ExchangeRateViewModel
 import edu.ucb.project.exchangerate.presentation.viewmodel.ExchangeViewModel
+import edu.ucb.project.biometric.presentation.viewmodel.BiometricViewModel
 
 
 val presentationModule = module {
@@ -15,5 +16,5 @@ val presentationModule = module {
     viewModelOf(::UserSearchViewModel)
     viewModelOf(::ExchangeRateViewModel)
     viewModelOf(::ExchangeViewModel)
-
+    viewModelOf(::BiometricViewModel)
 }

@@ -13,14 +13,15 @@ import edu.ucb.project.login.domain.repository.LoginRepository
 import edu.ucb.project.navigation.AppNavHost
 import edu.ucb.project.user_search.presentation.screen.UserSearchScreen
 import edu.ucb.project.weather.presentation.screen.WeatherScreen
+import edu.ucb.project.biometric.presentation.screen.BiometricTestScreen
 
 
 
 @Composable
 fun App(){
     MaterialTheme{
-//        AppNavHost()
-        ExchangeScreen()
+    BiometricTestScreen()
+
     }
 }
 

@@ -86,10 +86,9 @@ kotlin {
             implementation(libs.firebase.database)
             implementation(libs.firebase.firestore)
             implementation(libs.firebase.config)
-            implementation("edu.ucb.ds:shared:1.0.0-SNAPSHOT")
             implementation(libs.wire.runtime)
             implementation(libs.wire.grpc.client)
-
+            implementation("eu.anifantakis:ksafe-biometrics:3.3.0")
 
 
 
@@ -104,6 +103,8 @@ kotlin {
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
     add("kspAndroid", libs.androidx.room3.compiler)
+    add("kspIosArm64", libs.androidx.room3.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room3.compiler)
 }
 
 room3{

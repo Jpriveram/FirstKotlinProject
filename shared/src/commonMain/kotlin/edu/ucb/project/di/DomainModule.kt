@@ -6,11 +6,15 @@ import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import edu.ucb.project.user_search.domain.usecase.SearchUserUseCase
 import edu.ucb.project.weather.domain.usecase.GetWeatherUseCase
+import edu.ucb.project.biometric.domain.usecase.AuthenticateUserUseCase
+import edu.ucb.project.biometric.domain.usecase.CheckBiometricAvailabilityUseCase
 
 val domainModule = module {
     singleOf(::LoginUseCase)
     singleOf(::SearchUserUseCase)
     singleOf(::GetWeatherUseCase)
     singleOf(::ObserveExchangeUseCase)
+    singleOf(::AuthenticateUserUseCase)
+    singleOf(::CheckBiometricAvailabilityUseCase)
 
 }

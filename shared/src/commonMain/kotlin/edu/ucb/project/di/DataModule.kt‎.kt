@@ -18,6 +18,8 @@ import edu.ucb.project.weather.data.datasource.WeatherRemoteDataSource
 import edu.ucb.project.weather.data.service.WeatherApiService
 import edu.ucb.project.weather.domain.repository.WeatherRepository
 import edu.ucb.project.weather.data.repository.WeatherRepositoryImpl
+import edu.ucb.project.biometric.data.repository.KSafeBiometricRepository
+import edu.ucb.project.biometric.domain.repository.BiometricRepository
 import kotlin.math.sin
 
 val dataModule = module {
@@ -35,5 +37,9 @@ val dataModule = module {
 
     singleOf(::RealTimeDataBase)
     single<ExchangeRepository> { ExchangeRepositoryImpl(get()) }
+
+    single<BiometricRepository> {
+        KSafeBiometricRepository()
+    }
 }
 
